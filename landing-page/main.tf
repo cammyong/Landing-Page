@@ -15,7 +15,6 @@ module "vpc" {
     private_app_subnet_az2_cidr = var.private_app_subnet_az2_cidr
     private_data_subnet_az1_cidr = var.private_data_subnet_az1_cidr
     private_data_subnet_az2_cidr = var.private_data_subnet_az2_cidr
-
 }
 
 # create nat gateway
@@ -33,6 +32,10 @@ module "nat_gateway" {
 
 module "security_group" {
     source = "../modules/security-groups"
-    vpc_id = module.vpc.vpc_id
-    
+    vpc_id = module.vpc.vpc_id 
+}
+
+module "ecs_task_execution_role" {
+    source = "../modules/ecs-tasks-execution-role"
+    project_name = module.vpc.project_name  
 }
