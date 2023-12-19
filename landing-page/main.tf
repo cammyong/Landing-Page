@@ -56,7 +56,6 @@ module "application_load_balancer" {
     certificate_arn = module.acm.certificate_arn
 }
 
-
 module "ecs" {
     source = "../modules/ecs"
     project_name = module.vpc.project_name
@@ -67,4 +66,22 @@ module "ecs" {
     private_app_subnet_az2_id = module.vpc.private_app_subnet_az2_id
     ecs_security_group = module.security_group.ecs_security_group
     alb_target_group_arn = module.application_load_balancer.alb_target_group_arn
+}
+
+module "auto_scaling_group" {
+    source = "../modules/asg"
+    ecs_cluster_name = module.ecs.ecs_cluster_name
+    ecs_service_name = module.ecs.ecs_service_name 
+}
+
+module "route-53" {
+    source = "../modules/route53"
+    domain_name = module.acm.domain_name
+    record_name = var.record_name
+    application_load_balancer_dns_name = module.application_load_balancer.application_load_balancer_dns_name
+    application_load_balancer_zone_id = module.application_load_balancer.application_load_balancer_zone_id
+}
+
+output "website_url" {
+    value =join("", ["https://", var.record_name, ".", var.domain_name])
 }
