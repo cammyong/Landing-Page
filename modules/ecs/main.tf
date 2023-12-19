@@ -10,7 +10,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
 # create cloudwatch log group
 resource "aws_cloudwatch_log_group" "log_group" {
-  name = "${var.project_name}-task-definition"
+  name = "/ecs/${var.project_name}-task-definition"
 
   lifecycle {
     create_before_destroy = true
