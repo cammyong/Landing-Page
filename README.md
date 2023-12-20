@@ -18,7 +18,7 @@ This terraform module will create a simple static application.
 - Simple static application used (https://github.com/sujoyduttajad/Landing-Page-React)
 
 
-## Procedure
+## Solution
 
 - Dockerfile used to create an image and store in Amazon ECR.
 
