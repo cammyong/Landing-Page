@@ -6,8 +6,9 @@ Also, I will explain the steps and approach used to deploy a static Application 
 ## Diagram
 ![3-Tier Architecture](<Cloud Architecture.png>)
 
+
 This terraform module will create a simple static application.
-## Diagram
+## Screenshot of the terraform module 
 ![Terraform module](<Terraform module.png>)
 
 
@@ -17,7 +18,7 @@ This terraform module will create a simple static application.
 - Simple static application used (https://github.com/sujoyduttajad/Landing-Page-React)
 
 
-## Approach
+## Procedure
 
 - Dockerfile used to create an image and store in Amazon ECR.
 
