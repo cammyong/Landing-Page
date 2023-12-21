@@ -20,11 +20,15 @@ This terraform module will create a simple static application.
 
 ## Solution
 
-- Dockerfile used to create an image and store in Amazon ECR.
+- Dockerfile used to create a container image  for the static application and stored in Amazon ECR.
 
 - Created infrastructure components such as ( vpc, nat-gateway, security group, application load balancer, autoscaling group, elasic container service, ecs task execution,AWS certificate manager and route-53).
 
 - Pushed the infrastructure to github account.
+
+- Hurray!!! The result of the web site returned as expected.
+![web app](<static web application.png>)
+
 
 ## Steps:
 
