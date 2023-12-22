@@ -8,7 +8,7 @@ Also, I will explain the steps and approach used to deploy a static Application 
 
 
 This terraform module will create a simple static application.
-## Screenshot of the terraform module 
+## Screenshot of the file structure  of the 3-tier architecture using terraform module 
 ![Terraform module](<Terraform module.png>)
 
 
@@ -27,7 +27,7 @@ This terraform module will create a simple static application.
 - Pushed the infrastructure to github account.
 
 - Hurray!!! The result of the web site returned as expected.
-![web app](<static web application.png>)
+![static app](<static app.png>)
 
 
 ## Steps:
